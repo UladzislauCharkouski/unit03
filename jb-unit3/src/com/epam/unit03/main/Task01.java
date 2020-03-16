@@ -1,7 +1,6 @@
 package com.epam.unit03.main;
 
 import java.util.Scanner;
-import java.util.regex.Pattern;
 
 public class Task01 {
 	public static void main(String[] args) {
@@ -14,13 +13,28 @@ public class Task01 {
 		System.out.println("Какую валюту вы бы хотели обменять?\n" + "Введите usd, eur, rub или byn");
 		System.out.println(">");
 		Scanner sc = new Scanner(System.in);
+		while (sc.hasNext(usd) == false && sc.hasNext(eur) == false && sc.hasNext(rub) == false && sc.hasNext(byn) == false) {
+			String x = sc.next();
+			System.out.println("Вы неверно ввели валюту, попробуйте ещё раз");
+			System.out.println(">");
+		}
 		String sc1 = sc.next(); //какую валюту поменять
 		System.out.println("Введите сумму");
 		System.out.println(">");
+		while (sc.hasNextInt() == false) {
+			String x = sc.next();
+			System.out.println("Вы неверно ввели сумму, попробуйте ещё раз");
+			System.out.println(">");
+		}
 		int sc2 = sc.nextInt(); //сумма денег
 		System.out.println("На какую валюту вы бы хотели обменять ваши  \"  " + sc2 + " - " + sc1 + "  \" ?");
 		System.out.println("Введите usd, eur, rub или byn");
 		System.out.println(">");
+		while (sc.hasNext(usd) == false && sc.hasNext(eur) == false && sc.hasNext(rub) == false && sc.hasNext(byn) == false) {
+			String x = sc.next();
+			System.out.println("Вы неверно ввели валюту для конвертирования, попробуйте ещё раз");
+			System.out.println(">");
+		}
 		String sc3 = sc.next(); //какую валюту выдать
 		switch (sc1) {
 		case "usd":
